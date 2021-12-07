@@ -1,0 +1,11 @@
+### Cadastrar um novo funcionário
+POST https://localhost:5001/api/funcionario/create
+Content-Type: application/json
+
+{
+    "Nome" : "João",
+    "Cpf" : "123456789"
+}
+
+### Listar todas os funcionarios
+GET https://localhost:5001/api/funcionario/list
