@@ -1,11 +1,12 @@
-using API.Data;
-using API.Models;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
+    using API.Data;
+    using API.Models;
+    using Microsoft.AspNetCore.Mvc;
+    using System;
+    using System.Linq;
 
 namespace API.Controllers
 {
+
     [Route("api/funcionario")]
     [ApiController]
     public class FuncionarioController : ControllerBase
@@ -16,14 +17,14 @@ namespace API.Controllers
         {
             _context = context;
         }
-
-       [HttpPost]
-        [Route("Create")]
+        //POST: api/funcionario/cadastrar
+        [HttpPost]
+        [Route("Cadastrar")]
         public IActionResult Create([FromBody] Funcionario funcionario)
         {
             try
             {
-                _context.Funcionario.Add(funcionario);
+                _context.Funcionarios.Add(funcionario);
                 _context.SaveChanges();
                 return Created("Funcionario adicionado com sucesso!", funcionario);
             }
@@ -32,8 +33,8 @@ namespace API.Controllers
                 throw;
             }
         }
-
-        [Route("List")]
-        public IActionResult List() => Ok(_context.Funcionario.ToList());
+        //GET: api/funcionario/listar
+        [Route("Listar")]
+        public IActionResult List() => Ok(_context.Funcionarios.ToList());
     }
 }
