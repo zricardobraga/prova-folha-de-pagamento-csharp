@@ -11,7 +11,7 @@ namespace API.Data
         }
 
         public DbSet<Funcionario> Funcionarios { get; set; }
-        // public DbSet<FolhaDePagamento> FolhasDePagamento { get; set; }
+        public DbSet<FolhaDePagamento> FolhasDePagamento { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             builder.UseInMemoryDatabase("conenctionString");

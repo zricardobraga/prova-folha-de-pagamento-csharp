@@ -1,5 +1,5 @@
 ### Cadastrar um novo funcionário
-POST https://localhost:5001/api/funcionario/create
+POST https://localhost:5001/api/funcionario/cadastrar
 Content-Type: application/json
 
 {
@@ -8,4 +8,4 @@ Content-Type: application/json
 }
 
 ### Listar todas os funcionarios
-GET https://localhost:5001/api/funcionario/list
+GET https://localhost:5001/api/funcionario/listar

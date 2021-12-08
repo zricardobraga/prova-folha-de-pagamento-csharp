@@ -21,6 +21,8 @@ import { AppComponent } from "./app.component";
 import { CadastrarFuncionarioComponent } from './components/views/cadastrar-funcionario/cadastrar-funcionario.component';
 import { ListarFuncionarioComponent } from './components/views/listar-funcionario/listar-funcionario.component';
 import { TemplateComponent } from './components/template/template/template.component';
+import { CadastrarFolhaComponent } from './components/views/cadastrar-folha/cadastrar-folha.component';
+import { ListarFolhaComponent } from './components/views/listar-folha/listar-folha.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { TemplateComponent } from './components/template/template/template.compo
     CadastrarFuncionarioComponent,
     ListarFuncionarioComponent,
     TemplateComponent,
+    CadastrarFolhaComponent,
+    ListarFolhaComponent,
 
   ],
   imports: [

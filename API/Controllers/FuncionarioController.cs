@@ -22,17 +22,13 @@ namespace API.Controllers
         [Route("Cadastrar")]
         public IActionResult Create([FromBody] Funcionario funcionario)
         {
-            try
-            {
+
                 _context.Funcionarios.Add(funcionario);
                 _context.SaveChanges();
                 return Created("Funcionario adicionado com sucesso!", funcionario);
-            }
-            catch(Exception ex)
-            {
-                throw;
-            }
+
         }
+        
         //GET: api/funcionario/listar
         [Route("Listar")]
         public IActionResult List() => Ok(_context.Funcionarios.ToList());

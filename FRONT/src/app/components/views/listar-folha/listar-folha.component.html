@@ -1,0 +1,48 @@
+<a mat-raised-button color="primary" routerLink="/folha/cadastrar">
+    <mat-icon mat-list-icon>add</mat-icon>
+    Novo Folha de Pagamento</a
+>
+
+<table mat-table [dataSource]="folhas" class="mat-elevation-z8">
+    <!-- Coluna do Id -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>#</th>
+        <td mat-cell *matCellDef="let folha">{{ folha.id }}</td>
+    </ng-container>
+    <!-- Coluna do Nome do Funcionário -->
+    <ng-container matColumnDef="funcionarioNome">
+        <th mat-header-cell *matHeaderCellDef>Nome do Funcionário</th>
+        <td mat-cell *matCellDef="let folha">{{ folha.funcionario!.nome }}</td>
+    </ng-container>
+    <!-- Coluna do CPF do Funcionário -->
+    <ng-container matColumnDef="funcionarioCpf">
+        <th mat-header-cell *matHeaderCellDef>CPF do Funcionário</th>
+        <td mat-cell *matCellDef="let folha">{{ folha.funcionario!.cpf }}</td>
+    </ng-container>
+    <!-- Coluna do mes -->
+    <ng-container matColumnDef="mes">
+        <th mat-header-cell *matHeaderCellDef>mes</th>
+        <td mat-cell *matCellDef="let folha">{{ folha.mes }}</td>
+    </ng-container>
+    <!-- Coluna do ano -->
+    <ng-container matColumnDef="ano">
+        <th mat-header-cell *matHeaderCellDef>Ano</th>
+        <td mat-cell *matCellDef="let folha">{{ folha.ano }}</td>
+    </ng-container>
+    <!-- Coluna das horas -->
+    <ng-container matColumnDef="horas">
+        <th mat-header-cell *matHeaderCellDef>Horas</th>
+        <td mat-cell *matCellDef="let folha">
+            {{ folha.horas }}
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="valorHora">
+        <th mat-header-cell *matHeaderCellDef>Valor da Hora</th>
+        <td mat-cell *matCellDef="let folha">
+            {{ folha.valorHora }}
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunasExibidas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunasExibidas"></tr>
+</table>
